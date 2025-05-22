@@ -1,39 +1,129 @@
-# vue-project
+# Vue-Nuxt-Like-Start
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue.js project with Nuxt-like features and structure.
 
-## Recommended IDE Setup
+## Nuxt-like Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This project uses unplugin to provide Nuxt-like development experience:
+- Auto-imports for components, composables, and utilities
+- File-based routing with `pages/` directory
+- Layout system with `layouts/` directory
+- TypeScript support with auto-generated type definitions
+- Plugin system similar to Nuxt
 
-## Type Support for `.vue` Imports in TS
+## Project Structure
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+```
+src/
+├── assets/         # Static assets like images, fonts, etc.
+├── components/     # Vue components
+├── composables/    # Vue composables
+├── config/         # Configuration files
+├── layouts/        # Layout components
+├── libs/          # Utility libraries
+├── pages/         # Route components
+├── plugins/       # Vue plugins
+├── router/        # Vue Router configuration
+├── services/      # API services
+├── stores/        # Pinia stores
+└── types/         # TypeScript type definitions
+```
 
-## Customize configuration
+## Components
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Structure Components
+Located in `src/components/Structure/`
+- Components that define the main structure of the application
 
-## Project Setup
+### Loading Components
+Located in `src/components/Loading/`
+- Components related to loading states and spinners
 
-```sh
+### Global Components
+Located in `src/components/Global/`
+- Reusable components used throughout the application
+
+## Composables
+
+### useFetch
+Located in `src/composables/useFecth.ts`
+- A custom composable for handling data fetching
+- Provides functionality for making HTTP requests
+- Includes error handling and loading states
+
+### axiosFetch
+Located in `src/composables/axiosFetch.ts`
+- A lightweight wrapper around Axios for making HTTP requests
+- Provides a simplified interface for API calls
+
+## Plugins
+
+### setInitData
+Located in `src/plugins/setInitData.ts`
+- Plugin for initializing application data
+- Sets up initial state and configurations
+
+### i18n
+Located in `src/plugins/i18n/`
+- Internationalization plugin
+- Handles multiple language support
+
+## Configuration
+
+The project uses several configuration files:
+- `vite.config.ts` - Vite configuration with unplugin setup for Nuxt-like features
+- `tsconfig.json` - TypeScript configuration
+- `eslint.config.ts` - ESLint configuration
+- `env.d.ts` - Environment type definitions
+- `auto-imports.d.ts` - Auto-generated type definitions for auto-imports
+- `components.d.ts` - Auto-generated type definitions for components
+
+## Development
+
+### Prerequisites
+- Node.js
+- npm or yarn
+
+### Installation
+```bash
 npm install
+# or
+yarn install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### Development Server
+```bash
 npm run dev
+# or
+yarn dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### Build
+```bash
 npm run build
+# or
+yarn build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## TypeScript Support
 
-```sh
-npm run lint
-```
+The project is built with TypeScript and includes:
+- Type definitions for components
+- Type-safe API calls
+- Type definitions for environment variables
+
+## Additional Features
+
+- Vue Router for navigation
+- Pinia for state management
+- ESLint for code linting
+- EditorConfig for consistent coding styles
+- Git configuration for version control
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
