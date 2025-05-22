@@ -1,0 +1,19 @@
+@theme static  {
+  --font-abril: Abril Fatface, sans-serif;
+  --font-mulish: Mulish, sans-serif
+}
+
+/* Syncs with variables/colors.css */
+@theme inline  {
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-secondary: var(--color-secondary);
+
+  --color-mainBg: var(--color-mainBg);
+  --color-bodyBg: var(--color-bodyBg);
+
+  --color-textColor: var(--color-textColor);
+  --color-para: var(--color-para);
+  --color-linkColor: var(--color-linkColor);
+  --color-inputPlaceholder: var(--color-inputPlaceholder);
+}

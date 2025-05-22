@@ -1,0 +1,32 @@
+:root {
+  /* Base */
+  --color-primary: #008499;
+  --color-primary-light: #029BC5;
+  --color-secondary: #141B4F;
+
+  /* Custom */
+  --color-mainBg: #FFFFFF;
+  --color-bodyBg: #FFFFFF;
+
+  --color-textColor: var(--color-secondary);
+  --color-para: #596080;
+  --color-linkColor: #464B6F;
+  --color-inputPlaceholder:#898DA7;
+
+  /* Nuxt-UI */
+  --ui-primary: var(--color-primary);
+  --ui-secondary: var(--color-secondary);
+  --ui-bg: var(--color-mainBg);
+  --ui-container: 1450px;
+}
+
+:root.dark {
+  /* Custom */
+  --color-mainBg: #121212;
+  --color-bodyBg: #121212;
+
+  --color-textColor: #FFFFFF;
+  --color-para: #FFFFFF;
+  --color-linkColor: #FFFFFF;
+  --color-inputPlaceholder:#FFFFFF;
+}
