@@ -17,44 +17,72 @@ This project uses unplugin to provide Nuxt-like development experience:
 src/
 ├── assets/         # Static assets like images, fonts, etc.
 ├── components/     # Vue components
+│   ├── Global/    # Global reusable components
+│   │   ├── LangSwitcher.vue    # Language switcher component
+│   │   └── ThemeSwitcher.vue   # Dark/Light theme switcher
+│   ├── Loading/   # Loading state components
+│   │   ├── AppLoading.vue      # Initial app loading screen
+│   │   └── PageLoading.vue     # Page transition loading screen
+│   └── Structure/ # Layout structure components
+│       ├── AppNav.vue          # Main navigation component
+│       └── AppFooter.vue       # Application footer
 ├── composables/    # Vue composables
+│   ├── useFetch.ts     # Advanced data fetching with loading states
+│   └── axiosFetch.ts   # Lightweight Axios wrapper
 ├── config/         # Configuration files
 ├── layouts/        # Layout components
+│   ├── default.vue    # Default application layout
+│   └── auth.vue       # Authentication pages layout
 ├── libs/          # Utility libraries
 ├── pages/         # Route components
+│   ├── auth/         # Authentication pages
+│   └── products/     # Product-related pages
 ├── plugins/       # Vue plugins
+│   ├── i18n/         # Internationalization
+│   └── setInitData.ts # Initial data setup
 ├── router/        # Vue Router configuration
 ├── services/      # API services
 ├── stores/        # Pinia stores
+│   ├── auth.ts       # Authentication state management
+│   └── loading.ts    # Loading states management
 └── types/         # TypeScript type definitions
 ```
 
 ## Components
 
-### Structure Components
-Located in `src/components/Structure/`
-- Components that define the main structure of the application
+### Global Components
+Located in `src/components/Global/`
+- `LangSwitcher.vue`: Handles language switching between English and Arabic
+- `ThemeSwitcher.vue`: Toggles between dark and light themes using VueUse's `useColorMode`
 
 ### Loading Components
 Located in `src/components/Loading/`
-- Components related to loading states and spinners
+- `AppLoading.vue`: Displays a full-screen loading animation during initial application load
+- `PageLoading.vue`: Shows a loading overlay during page transitions with a backdrop blur effect
 
-### Global Components
-Located in `src/components/Global/`
-- Reusable components used throughout the application
+### Structure Components
+Located in `src/components/Structure/`
+- `AppNav.vue`: Main navigation component with authentication-aware routing
+- `AppFooter.vue`: Application footer with copyright information
 
 ## Composables
 
 ### useFetch
-Located in `src/composables/useFecth.ts`
-- A custom composable for handling data fetching
-- Provides functionality for making HTTP requests
-- Includes error handling and loading states
+Located in `src/composables/useFetch.ts`
+- A powerful data fetching composable similar to Nuxt's useFetch
+- Features:
+  - Reactive data fetching with loading states
+  - Error handling
+  - Response transformation
+  - Automatic refresh on watched values
+  - TypeScript support
+  - Configurable HTTP methods and options
 
 ### axiosFetch
 Located in `src/composables/axiosFetch.ts`
-- A lightweight wrapper around Axios for making HTTP requests
-- Provides a simplified interface for API calls
+- A lightweight wrapper around Axios
+- Provides a simplified interface for making HTTP requests
+- Type-safe response handling
 
 ## Plugins
 
@@ -66,7 +94,9 @@ Located in `src/plugins/setInitData.ts`
 ### i18n
 Located in `src/plugins/i18n/`
 - Internationalization plugin
-- Handles multiple language support
+- Supports English and Arabic languages
+- Persists language preference in localStorage
+- Provides global translation functions
 
 ## Configuration
 
