@@ -19,7 +19,13 @@ const logout = async() => {
         <router-link to="/products">
           Products
         </router-link> |
-        <router-link to="/auth/login">
+        <router-link to="/comments">
+          Comments
+        </router-link> |
+        <router-link
+          v-if="!authStore.user"
+          to="/auth/login"
+        >
           Login
         </router-link>
       </div>
